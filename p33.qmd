@@ -1,0 +1,46 @@
+---
+title: "Structural Evolution and Driving Mechanisms of China’s Intercity HSR Connectivity Network"
+author: 
+  - name: "Zijun Ding"
+    affiliation: "Ghent University"
+format: html
+---
+
+# Introduction {#sec-intro}
+
+High-speed rail (HSR) has reshaped the spatial organization of cities in China.  
+It not only improves intercity accessibility but also influences the **flow of knowledge, capital, and innovation**.  
+
+In this paper, we ask: *How has the structure of China’s intercity HSR connectivity network evolved, and what mechanisms drive its formation?*  
+As an overview see @fig-example.
+
+<div style="text-align: center;">
+
+![Mechanism diagram](images/example.png){#fig-example}
+
+</div>
+
+# Methods {#sec-methods}
+
+We adopt a **Temporal Exponential Random Graph Model (TERGM)** to capture
+the dynamics of intercity connectivity networks, following the formulation.
+
+The probability function is given by Eq. @eq-tergm:
+
+$$
+P(N^t \mid N^{t-k}, \ldots, N^{t-1}, \theta) 
+= \frac{\exp\!\big(\theta^{T}\, h(N^t, N^{t-1}, \ldots, N^{t-k})\big)}
+       {c(\theta, N^{t-k}, \ldots, N^{t-1})}
+$$ {#eq-tergm}
+
+Where $P(\cdot)$ is the probability that the network $N^t$ is observed at time $t$,
+$h(\cdot)$ is the vector of network statistics, $\theta^{T}$ are the parameters, and
+$c(\theta, N^{t-k}, \ldots, N^{t-1})$ is the normalizing constant ensuring that
+all probabilities sum to 1.
+
+Key elements:  
+- **Data source:** train schedules and travel times (2008–2023)  
+- **Network construction:** weighted edges based on frequency and shortest travel time  
+- **Modeling strategy:** node-level, dyad-level, and endogenous structural effects
+
+# References
